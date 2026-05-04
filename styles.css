@@ -1,0 +1,141 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+
+
+}
+
+body{
+    background-color: #121212;
+}
+.nav-container{
+    background-color: #121212;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+
+
+.nav-bar{
+    width: 90%;
+}
+
+.nav-bar ul{
+    color: white;
+    display: flex;
+    justify-content: end;
+    gap: 75px;
+    list-style-type: none;   
+}
+
+.logo{
+    margin-right: auto;
+}
+
+.banner-container{
+ 
+    width: 100%;
+
+    background-image: url('assets/lany-banner.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    aspect-ratio: 16/9;
+
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+
+.banner-container h1{
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    margin: 50px;
+    font-size: 72px;
+
+}
+
+.highlighted-text{
+    color: #48A111
+}
+
+
+.content-header{
+    color: white;
+    
+    font-size: 60px;
+    margin: 30px;
+}
+
+.user-category-selection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 500px;
+    background-color: #48A111;
+}
+
+.category-card{
+    height: 400px;
+    width: 300px;
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 2px 2px 10px black;
+    
+}
+
+.category-card-content{
+    padding: 40px;
+}
+
+.user-icon {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%; /* Standard for a perfect circle */
+    border: 6px solid transparent; /* Required for the gradient to show through */
+    
+    background-image: 
+        linear-gradient(white, white), /* 1. Inner fill color */
+        linear-gradient(to right, rgb(0, 51, 0), rgb(0, 255, 13)); /* 2. Border gradient */
+    
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+
+.user-icon-container{
+    display: flex;
+    justify-content: center;
+}
+
+.info-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.card-icons{
+    height: 50px;
+    filter: invert(1);
+}
+
