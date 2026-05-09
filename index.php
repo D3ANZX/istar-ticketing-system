@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>iStar Ticketing System</title>
     <link rel="stylesheet" href="styles.css">
 <?php
     session_start();
@@ -50,22 +50,6 @@
             <div class="user-category-selection">
 
 
-                <div class="category-card">
-                    <div class="category-card-content">
-                        <div class="user-icon-container">
-                            <img src="assets/lany-logo.jpg" alt="user-icon" class="user-icon">
-                        </div>
-                        
-                        <div class="info-container">
-                            <h2>LANY - World Tour</h2>
-                            <p>Catch up with the music of LANY, live in Manila!</p>
-                        </div>
-
-                        <div class="link-container">
-                            <a href=""><img src="assets/right.png" alt="right-button" class="card-icons"></a>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="category-card">
                     <div class="category-card-content">
@@ -84,21 +68,6 @@
                     </div>
                 </div>
 
-                <div class="category-card">
-                    <div class="category-card-content">
-                        <div class="user-icon-container">
-                            <img src="assets/taylor-logo.jpg" alt="user-icon" class="user-icon">
-                        </div>
-                        
-                        <div class="info-container">
-                            <h2>TAYLOR SWIFT</h2>
-                            <p>Catch up with the music of Taylor, live in Manila!</p>
-                        </div>
-
-                        <div class="link-container">
-                            <a href=""><img src="assets/right.png" alt="right-button" class="card-icons"></a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
