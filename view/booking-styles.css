@@ -1,0 +1,130 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+
+
+}
+
+body{
+    background-color: #121212;
+    width: 100%;
+}
+
+.main{
+    width: 100%;
+    height: max-content;
+}
+.nav-container{
+    background-color: #121212;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 50;
+}
+
+
+
+.nav-bar{
+    width: 90%;
+}
+
+.nav-bar ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 75px;
+    list-style-type: none;   
+}
+
+.nav-bar a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-bar a:hover{
+    color: #48A111;
+    border-bottom: 4px solid #48A111;
+}
+.nav-icon{
+    height:60px;
+    width: 60px;
+}
+
+
+
+
+.logo{
+    margin-right: auto;
+}
+.booking-form-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.booking-window{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    width: 400px;
+    height: 500px;
+    background-color: #181818;
+    box-shadow: 4px 4px 10px black;
+}
+.booking-banner{
+    width: 100%;
+}
+
+.booking-banner-img{
+    width: 90%;
+    margin-top: 30px;
+}
+
+
+.customer-details{
+    margin: 30px;
+}
+
+.form-header{
+    color: white;
+}
+
+.form-label{
+    color: white;
+}
+
+.form-name{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.data{
+    font-size: 18px;
+}
+
+.submit-button-container{
+    width: 90%;
+    display: flex;
+    justify-content: end;
+}
+
+.confirm-order-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #48A111;
+    color: white;
+    width: 160px;
+    height: 50px;
+    text-decoration: none;
+}
