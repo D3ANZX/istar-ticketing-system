@@ -27,7 +27,6 @@
                                 else echo $_SESSION['firstname'];
                             ?>    
 
-                            <img src="" alt="">
                     </a></li>
                 </ul>
             </div>
