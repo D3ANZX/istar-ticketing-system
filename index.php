@@ -37,10 +37,14 @@
 
         <div class="content">
             <div class="banner-container">
-                <h1>ARE YOU READY TO MEET YOUR <br> <span class="highlighted-text"> FAVORITE ARTISTS? </span>
+                <h1>ARE YOU READY TO MEET YOUR <br> <span class="highlighted-text"> FAVORITE ARTISTS? </span></h1>
+                
+                <div class="banner-button-container">
+                    <a href="./view/booking_form.php" class="booking-link">VIEW ARTISTS</a>
                     <a href="./view/booking_form.php" class="booking-link">BOOK NOW</a>
-                </h1>
+                </div>
             </div>
+           
 
         <center><h1 class="content-header">TOP ARTISTS</h1></center>
             <div class="user-category-selection">
