@@ -2,7 +2,7 @@
     $servername = "localhost";
     $db_username = "root";
     $db_password = "";
-    $dbname = "istardb";
+    $dbname = "istar"; // Change back to istardb
 
 
     //DB Connection init
