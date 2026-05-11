@@ -43,7 +43,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         <br>
         <div class="loginform-container">
             <div class="loginform-window">
-                <form action="../model/login.php" method="post" class="loginform">
+                <form action="../model/register.php" method="post" class="loginform">
                     <h1>SIGN IN</h1>
                     <br>
 
