@@ -26,6 +26,7 @@
                                 echo "LOGIN"; 
                                 else echo $_SESSION['firstname'];
                             ?>    
+
                     </a></li>
                 </ul>
             </div>
