@@ -44,7 +44,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         <div class="loginform-container">
             <div class="loginform-window">
                 <form action="../model/login.php" method="post" class="loginform">
-                    <h1>SIGN IN</h1>
+                    <h1>SIGN UP</h1>
                     <br>
                     <input type="text" class="sign-in-textbox" placeholder="username" name="email_address">
                     <br>
