@@ -40,6 +40,7 @@ if ($row = mysqli_fetch_assoc($result)) {
     exit();
 } else {
     echo "Invalid email or password.";
-
 }
+
+
 ?>
