@@ -13,6 +13,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iStar Ticketing System</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/x-icon" href="../assets/istar-logo.png">
 </head>
 
 <body>
@@ -37,10 +38,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             </div>
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
         <div class="loginform-container">
             <div class="loginform-window">
                 <form action="../model/login.php" method="post" class="loginform">
@@ -52,9 +49,9 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
                     <input type="text" class="sign-in-textbox" placeholder="password" name="password">
                     <br>
                     <br>
-                    <input type="submit" value="LOGIN">
+                    <input type="submit" value="LOGIN" class="auth-button">
                     <a href="../view/register_page.php" class="register-btn">
-                        <button type="button">REGISTER</button>
+                        <button type="button" class="auth-button">REGISTER</button>
                     </a>
                 </form>
             </div>
