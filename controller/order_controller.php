@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $concert_id = $_POST['concert_id'] ?? null;
     $order_amount = $_POST['order_amount'] ?? null;
     $user_id = $_SESSION['user_id'] ?? null;
+    echo $concert_id;
+    echo $order_amount;
+    echo $user_id;
 
     if ($concert_id && $order_amount && $user_id) {
         // 4. Call the function inside your model and pass the values
@@ -27,7 +30,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// REMOVED $all_orders = readOrder(); from here.
-// This function should be called inside your view file (e.g., dashboard_page.php), 
-// not at the bottom of the form processing controller.
 ?>

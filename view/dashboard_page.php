@@ -10,6 +10,7 @@
     }
 </style>
     <?php
+
     session_start();
     $conn = mysqli_connect("localhost", "root", "", "istardb");
     if (!$conn) {
@@ -18,6 +19,9 @@
 
     $concert_query = "SELECT * FROM concerts_tbl";
     $concert_result = mysqli_query($conn, $concert_query);
+    $order_query = "SELECT * FROM orders_tbl";
+    $order_result = mysqli_query($conn, $order_query);
+
     ?>
     
 </head>
@@ -37,7 +41,7 @@
                         <?php
                                 if(!isset($_SESSION['firstname']))
                                 echo "LOGIN"; 
-                                else echo $_SESSION['firstname'];
+                                else echo strtoupper($_SESSION['firstname']);
                             ?>    
 
                     </a></li>
@@ -229,6 +233,8 @@ $raw_date = date("Y-m-d H:i:s", strtotime($row['concert_date']));
         </table>
     </div>
 </div>
+
+
     </div> <div class="right-column">
         <div class="dashboard-window">
             <div class="dashboard-window-header"><h2>YOUR HISTORY</h2></div>
@@ -238,16 +244,43 @@ $raw_date = date("Y-m-d H:i:s", strtotime($row['concert_date']));
                         <th>Order ID</th>
                         <th>Concert</th>
                         <th>Tickets</th>
+                        <th>Amount Paid</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Sample Concert</td>
-                        <td>2</td>
-                    </tr>
+
+                   
+                        <?php
+                            if(!$conn){
+                                echo "<td> Error 404 Cannot fetch data </td>";
+                            }
+                            else{
+                                if($order_result && mysqli_num_rows($order_result) > 0){
+                                    while($row = mysqli_fetch_assoc($order_result)){
+                                        $concert_id = $row['concert_id'];
+                                        $order_id = $row['order_id'];
+                                        $concert_query = "SELECT concert_title, ticket_cost FROM concerts_tbl where concert_id = $concert_id";
+                                        $concert_result_data = mysqli_query($conn, $concert_query);
+                                        $concert_row = mysqli_fetch_assoc($concert_result_data);
+
+                                       
+                                        
+
+                                        echo "<tr><td>".$row['order_id']."</td>";
+                                        echo "<td>".$concert_row['concert_title']."</td>";
+                                        echo "<td>".$row['order_amount']."</td>";
+                                        echo "<td>". $row['order_amount'] * $concert_row['ticket_cost']."</td></tr>";
+                                    }
+                                }
+                            }
+
+                        ?>
+                    
                 </table>
             </div>
         </div>
-    </div> </div> <script>
+    </div>
+    
+    </div>
+<script>
     let index = 0;
     const track = document.getElementById("track");
     const items = document.querySelectorAll(".carousel-item");
@@ -332,4 +365,36 @@ updateDashboardTimers();
 setInterval(updateDashboardTimers, 1000);
 </script>
 </body>
+<footer>
+    <div class="footer-container">
+        <br>
+        <div class="footer-content">
+            <div class="iStar_details">
+                <b><p>iStar Ticketing Systems</p></b>
+                <p>Copyright CodeBlackSolutions 2026</p>
+                <p>Native PHP, HTML5, CSS, and JS</p>
+                <br>
+                <b><p>Applications Development</p></b>
+                <p>Batch 2025-2026</p>
+            </div>
+
+            <div class="developer-data">
+                <b><p>Developers</p></b>
+                <ul>
+                    <li>Florentino Dean P. Gas</li>
+                    <li>Jenmar Oliveros</li>
+                    <li>BJ B. Saycon</li>
+                    <li>Andre Pulo</li>
+                    <li>Jim Lozada</li>
+                </ul>
+            </div>
+
+            <div class="external_links">
+                <b><p>Contacts</p></b>
+                <p>ADDRESS <br> New Way Street New York 5176</p>
+                <p>COMPANY TEL NO. <br> 0915-637-3614</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

@@ -31,7 +31,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
                             <?php
                             if (!isset($_SESSION['firstname']))
                                 echo "LOGIN";
-                            else echo $_SESSION['firstname'];
+                            else echo strtoupper($_SESSION['firstname']);
                             ?>
                         </a></li>
                 </ul>
@@ -100,4 +100,36 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     </div>
 </body>
 
+<footer>
+    <div class="footer-container">
+        <br>
+        <div class="footer-content">
+            <div class="iStar_details">
+                <b><p>iStar Ticketing Systems</p></b>
+                <p>Copyright CodeBlackSolutions 2026</p>
+                <p>Native PHP, HTML5, CSS, and JS</p>
+                <br>
+                <b><p>Applications Development</p></b>
+                <p>Batch 2025-2026</p>
+            </div>
+
+            <div class="developer-data">
+                <b><p>Developers</p></b>
+                <ul>
+                    <li>Florentino Dean P. Gas</li>
+                    <li>Jenmar Oliveros</li>
+                    <li>BJ B. Saycon</li>
+                    <li>Andre Pulo</li>
+                    <li>Jim Lozada</li>
+                </ul>
+            </div>
+
+            <div class="external_links">
+                <b><p>Contacts</p></b>
+                <p>ADDRESS <br> New Way Street New York 5176</p>
+                <p>COMPANY TEL NO. <br> 0915-637-3614</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>

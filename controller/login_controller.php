@@ -3,6 +3,7 @@
 $username_req = "";
 $email_req = "";
 
+
 // Check if data was actually posted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -15,5 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/[<>]/", $_POST['password'])) {
         $password_req = $_POST['password'];
     }
+        
 }
 ?>

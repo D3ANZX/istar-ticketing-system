@@ -31,8 +31,13 @@
             </div>
         </nav>
 
-    
+
+
         <div class="booking-concert-banner">
+            <br>
+            <br>
+            <br>
+            <!-- BOOKING CONTENT WINDOW -->
             <div class="booking-content">
                 <div class="booking-header">
                     <h1>AVAILABLE CONCERTS</h1>
@@ -41,7 +46,7 @@
                 <div class="concert-card-container">
 
                 <!-- CARDS -->
-                    <form action= "../controller/order_controller.php" method="post">
+                    <form action= "./payment_page.php" method="post">
 
                         <input type="hidden" name="concert_id" value="1">
                         <div class="concert-card">
@@ -69,7 +74,7 @@
                         </div>
                     </form>
 
-                    <form action= "../controller/order_controller.php" method="post">
+                    <form action= "./payment_page.php" method="post">
                         <input type="hidden" name="concert_id" value="2">
                         <div class="concert-card">
                             <img src="../assets/taylor-banner.jpg" alt="taylor-concert-banner" class="card-banner">
@@ -96,7 +101,7 @@
                         </div>
                     </form>
                     
-                    <form action= "../controller/order_controller.php" method="post">
+                    <form action= "./payment_page.php" method="post">
                         <input type="hidden" name="concert_id" value="3">
                         <div class="concert-card">
                             <img src="../assets/rexha-banner.png" alt="taylor-concert-banner" class="card-banner">
@@ -131,4 +136,37 @@
        
     </div>
 </body>
+
+<footer>
+    <div class="footer-container">
+        <br>
+        <div class="footer-content">
+            <div class="iStar_details">
+                <b><p>iStar Ticketing Systems</p></b>
+                <p>Copyright CodeBlackSolutions 2026</p>
+                <p>Native PHP, HTML5, CSS, and JS</p>
+                <br>
+                <b><p>Applications Development</p></b>
+                <p>Batch 2025-2026</p>
+            </div>
+
+            <div class="developer-data">
+                <b><p>Developers</p></b>
+                <ul>
+                    <li>Florentino Dean P. Gas</li>
+                    <li>Jenmar Oliveros</li>
+                    <li>BJ B. Saycon</li>
+                    <li>Andre Pulo</li>
+                    <li>Jim Lozada</li>
+                </ul>
+            </div>
+
+            <div class="external_links">
+                <b><p>Contacts</p></b>
+                <p>ADDRESS <br> New Way Street New York 5176</p>
+                <p>COMPANY TEL NO. <br> 0915-637-3614</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
