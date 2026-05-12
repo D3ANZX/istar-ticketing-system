@@ -221,7 +221,6 @@ $raw_date = date("Y-m-d H:i:s", strtotime($row['concert_date']));
             <?php
         }
     } else {
-        // Kung walang nakuha sa SELECT *
         echo "<tr><td colspan='4' style='text-align:center;'>No records found in concerts_tbl.</td></tr>";
     }
     ?>
