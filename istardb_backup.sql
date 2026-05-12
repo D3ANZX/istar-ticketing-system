@@ -27,10 +27,11 @@ CREATE TABLE `concerts_tbl` (
   `concert_title` varchar(50) NOT NULL,
   `concert_artist` varchar(50) NOT NULL,
   `ticket_cost` int(11) NOT NULL,
+  `concert_date` datetime DEFAULT NULL,
   PRIMARY KEY (`concert_id`),
   UNIQUE KEY `concert_title` (`concert_title`),
   UNIQUE KEY `concert_artist` (`concert_artist`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +40,7 @@ CREATE TABLE `concerts_tbl` (
 
 LOCK TABLES `concerts_tbl` WRITE;
 /*!40000 ALTER TABLE `concerts_tbl` DISABLE KEYS */;
-INSERT INTO `concerts_tbl` VALUES (1,'Sabrina - LOVE','Sabrina Carpenter',2000);
+INSERT INTO `concerts_tbl` VALUES (1,'Sabrina - LOVE','Sabrina Carpenter',2000,'2026-06-20 20:00:00'),(2,'The Eras Tour','Taylor Swift',5000,'2026-06-15 19:00:00');
 /*!40000 ALTER TABLE `concerts_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-11 16:02:26
+-- Dump completed on 2026-05-12 10:03:10
