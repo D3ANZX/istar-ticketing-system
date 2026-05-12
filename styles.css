@@ -315,10 +315,11 @@ CONCERT CARDS
 ========================= */
 .dashboard-container{
     margin-top: 0;
-    padding: 20px;
+    padding: 20px 5%;
     display: flex;
     gap: 10px;
     align-items: flex-start;
+    width: 100%;
 }
 
 .left-column{
@@ -326,11 +327,13 @@ CONCERT CARDS
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex: 2;
 }
 
 .right-column{
     width: 40%;
     display: flex;
+    flex: 1;
 }
 
 .dashboard-window {
@@ -342,7 +345,8 @@ CONCERT CARDS
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     flex-direction: column; 
-    height: 100%;
+    height: auto;
+    display: flex;
 }
 
 .dashboard-window-header{
@@ -360,13 +364,12 @@ CONCERT CARDS
    USER DATA
 ========================= */
 .user-data{
-    padding: 15px 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
 
-    max-width: 800px;
-    margin: 0 auto;
-
-    text-align: justify;
-    line-height: 1.8;
+    text-align: left;
 }
 
 /* =========================
@@ -396,16 +399,15 @@ CONCERT CARDS
 
     overflow: hidden;
     .right-column .dashboard-window {
-    height: 100%; /* Hahabain niya yung window hanggang bottom */
+    height: 100%; 
     display: flex;
     flex-direction: column;
 }
 
-/* Siguraduhin na yung mismong container ng data ay mahaba rin */
 .right-column .user-data {
-    flex: 1; /* Kakainin nito lahat ng extra space sa ilalim */
-    overflow-y: auto; /* Kung sakaling dumami ang history, magkakaroon ng scrollbar */
-    min-height: 500px; /* Base height para kahit konti lang history, mahaba pa rin siya */
+    flex: 1; 
+    overflow-y: auto; 
+    min-height: 500px; 
 }
 }
 
@@ -724,7 +726,7 @@ CONCERT CARDS
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1;
+    z-index: 10;
     transform: translate(-50%, -50%); 
     object-fit: cover; 
 }
@@ -750,7 +752,7 @@ CONCERT CARDS
     bottom: 5%;    
     left: 5%;
     width: 90%;   
-    z-index: 10;
+    z-index: 20;
     color: white;
     text-align: left;
 }
@@ -788,11 +790,8 @@ CONCERT CARDS
     color: #BFA9BA;
 }
 
-
-
 .play-btn { background: white; color: black; }
 .list-btn { background: rgba(109, 109, 110, 0.7); color: white; }
-
 
 .dashboard-container {
     margin-top: 0;
@@ -800,8 +799,11 @@ CONCERT CARDS
     display: flex;
     gap: 10px;
     align-items: stretch; 
-    
 }
+
+/* =========================
+   top artist jemi andre
+========================= */
 
 .episode-list {
     display: flex;
@@ -857,3 +859,53 @@ CONCERT CARDS
     padding-top: 5px;
     font-size: 12px;
 }
+
+.episode-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+}
+
+/* =========================
+   NEXT BUTTON DASHBOARD jemi andre
+========================= */
+
+.list-nav-btn {
+    position: absolute;
+    top: 35%;
+    z-index: 100;
+    background: rgba(24, 35, 70, 0.8); 
+    color: #BFA9BA;
+    border: 2px solid #7C83AD;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.list-nav-btn:hover {
+    background: #7C83AD;
+    color: white;
+    border-color: #BFA9BA;
+    transform: scale(1.1);
+}
+
+.list-nav-btn.prev { left: 0; }
+.list-nav-btn.next { right: 0; }
+
+.episode-list {
+    scroll-behavior: smooth;
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    width: 100%;
+}
+
