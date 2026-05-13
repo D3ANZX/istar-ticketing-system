@@ -46,7 +46,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
                     <input type="text" class="sign-in-textbox" placeholder="username" name="email_address">
                     <br>
                     <br>
-                    <input type="text" class="sign-in-textbox" placeholder="password" name="password">
+                    <input type="password" class="sign-in-textbox" placeholder="password" name="password">
                     <br>
                     <br>
                     <input type="submit" value="LOGIN" class="auth-button">

@@ -42,11 +42,12 @@
                 <div class="booking-header">
                     <h1>AVAILABLE CONCERTS</h1>
                 </div>
-
+                <br>
+                <br>
                 <div class="concert-card-container">
 
                 <!-- CARDS -->
-                    <form action= "./payment_page.php" method="post">
+                    <form action= "./concert_page.php" method="post">
 
                         <input type="hidden" name="concert_id" value="1">
                         <div class="concert-card">
@@ -56,13 +57,7 @@
                                 <p>Catch up with Sabrina Carpenter and slay - with Love</p>
 
                                 <div class="button-container">
-                                    <select name="order_amount" id="">
-                                        <option value="1"> 1</option>
-                                        <option value="2"> 2</option>
-                                        <option value="3"> 3</option>
-                                        <option value="4"> 4</option>
-                                        <option value="5"> 5</option>
-                                    </select>
+                                    
                                     <button type="submit" class="card-button">
                                         <img src="../assets/right.png" alt="submit-icon">
                                     </button>
@@ -73,8 +68,8 @@
                             </div>
                         </div>
                     </form>
-
-                    <form action= "./payment_page.php" method="post">
+                
+                    <form action= "./concert_page.php" method="post">
                         <input type="hidden" name="concert_id" value="2">
                         <div class="concert-card">
                             <img src="../assets/taylor-banner.jpg" alt="taylor-concert-banner" class="card-banner">
@@ -83,13 +78,7 @@
                                 <p>Meet Taylor Swift Live, in ERAS TOUR 2026!</p>
 
                                 <div class="button-container">
-                                    <select name="order_amount" id="">
-                                        <option value="1"> 1</option>
-                                        <option value="2"> 2</option>
-                                        <option value="3"> 3</option>
-                                        <option value="4"> 4</option>
-                                        <option value="5"> 5</option>
-                                    </select>
+ 
                                     <button type="submit" class="card-button">
                                         <img src="../assets/right.png" alt="submit-icon">
                                     </button>
@@ -101,7 +90,7 @@
                         </div>
                     </form>
                     
-                    <form action= "./payment_page.php" method="post">
+                    <form action= "./concert_page.php" method="post">
                         <input type="hidden" name="concert_id" value="3">
                         <div class="concert-card">
                             <img src="../assets/rexha-banner.png" alt="taylor-concert-banner" class="card-banner">
@@ -110,13 +99,7 @@
                                 <p>Have the best night with Bebe Rexha in her latest concert, see you there!</p>
 
                                 <div class="button-container">
-                                    <select name="order_amount" id="">
-                                        <option value="1"> 1</option>
-                                        <option value="2"> 2</option>
-                                        <option value="3"> 3</option>
-                                        <option value="4"> 4</option>
-                                        <option value="5"> 5</option>
-                                    </select>
+                                    
                                     <button type="submit" class="card-button">
                                         <img src="../assets/right.png" alt="submit-icon">
                                     </button>

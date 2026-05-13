@@ -30,7 +30,7 @@
                             <?php
                                     if(!isset($_SESSION['firstname']))
                                     echo "LOGIN"; 
-                                    else echo $_SESSION['firstname'];
+                                    else echo strtoupper($_SESSION['firstname']);
                                 ?>    
                         </a></li>
                         <?php if(isset($_SESSION['firstname'])): ?>

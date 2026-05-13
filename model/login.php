@@ -36,6 +36,7 @@ if ($row = mysqli_fetch_assoc($result)) {
     $_SESSION['contact_no'] = $row['contact_no'];
     $_SESSION['city'] = $row['city'];
     $_SESSION['address'] = $row['address'];
+    $_SESSION['role'] = $row['role'];
     //REDIRECT TO INDEX
     header('Location: ../index.php');
     exit();

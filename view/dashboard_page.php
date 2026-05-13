@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iStar Ticketing System</title>
     <link rel="stylesheet" href="../styles.css"> 
+    <link rel="icon" type="image/x-icon" href="../assets/istar-logo.png">
     <style>
     body {
         background-color: #182346
@@ -12,15 +13,21 @@
     <?php
 
     session_start();
+    
+    if(isset($_SESSION['role'])){
+        $role = $_SESSION['role'];
+        if($role === "admin"){
+            header('Location: ./admin_page.php');
+        }
+    }
     $conn = mysqli_connect("localhost", "root", "", "istardb");
     if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    
     $concert_query = "SELECT * FROM concerts_tbl";
     $concert_result = mysqli_query($conn, $concert_query);
-    $order_query = "SELECT * FROM orders_tbl";
-    $order_result = mysqli_query($conn, $order_query);
+    
 
     ?>
     
@@ -30,24 +37,24 @@
 
 
     <div class="main">
-        <div class="nav-container">
+        <nav class="nav-container">
             <div class="nav-bar">
                 <ul>
                     <li class="logo"><a href="../"><img src="../assets/istar-logo.png" alt="istar-logo" class="nav-icon"></a></li>
-                    <li class="nav-item"> <a href="../view/about_page.php">ABOUT </a></li>
-                    <li class="nav-item"><a href="../">HOME</a></li>
-                    <li class="nav-item"><a href="../view/booking_page.php">BOOK NOW</a></li>
-                    <li class="nav-item"><a href="../view/login_page.php">
-                        <?php
-                                if(!isset($_SESSION['firstname']))
-                                echo "LOGIN"; 
-                                else echo strtoupper($_SESSION['firstname']);
-                            ?>    
-
-                    </a></li>
+                    <li class="nav-item"> <a href="../view/about_page.php">ABOUT</a></li>
+                    <li class="nav-item"><a href="../index.php">HOME</a></li>
+                    <li class="nav-item"><a href="../view/booking_page.php" class="active">BOOK NOW</a></li>
+                    <li class="nav-item">
+                        <a href="../view/login_page.php" class="login-btn">
+                            <?php echo isset($_SESSION['firstname']) ? strtoupper($_SESSION['firstname']) : "LOGIN"; ?>
+                        </a>
+                    </li>
+                    <?php if(isset($_SESSION['firstname'])): ?>
+                        <li class="nav-item"><a href="../controller/logout.php">LOGOUT</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
-        </div>
+        </nav>
 
 <!--slideshow artist-->
         <div class="hero-banner">
@@ -163,6 +170,15 @@
             <div class="user-data">
                 <table class="dashboard-table">
     <tr>
+        <td>User Type</td>
+        <td><?php echo isset($_SESSION['role']) ? $_SESSION['role'] : "Guest"; ?></td>
+    </tr>
+
+    <tr>
+        <td>User ID</td>
+        <td><?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "Guest"; ?></td>
+    </tr>
+    <tr>
         <td>Name</td>
         <td><?php echo isset($_SESSION['firstname']) ? $_SESSION['firstname']." ".$_SESSION['lastname'] : "Guest"; ?></td>
     </tr>
@@ -237,7 +253,7 @@ $raw_date = date("Y-m-d H:i:s", strtotime($row['concert_date']));
 
     </div> <div class="right-column">
         <div class="dashboard-window">
-            <div class="dashboard-window-header"><h2>YOUR HISTORY</h2></div>
+            <div class="dashboard-window-header"><h2>YOUR HISTORY</h2> <a href="./ticket.php" class="view-tickets-button">VIEW TICKETS</a></div>
             <div class="user-data">
                 <table class="dashboard-table">
                     <tr>
@@ -249,6 +265,8 @@ $raw_date = date("Y-m-d H:i:s", strtotime($row['concert_date']));
 
                    
                         <?php
+                            $order_query = "SELECT * FROM orders_tbl where user_id =".$_SESSION['user_id'];
+                            $order_result = mysqli_query($conn, $order_query);
                             if(!$conn){
                                 echo "<td> Error 404 Cannot fetch data </td>";
                             }
@@ -260,10 +278,9 @@ $raw_date = date("Y-m-d H:i:s", strtotime($row['concert_date']));
                                         $concert_query = "SELECT concert_title, ticket_cost FROM concerts_tbl where concert_id = $concert_id";
                                         $concert_result_data = mysqli_query($conn, $concert_query);
                                         $concert_row = mysqli_fetch_assoc($concert_result_data);
-
-                                       
                                         
-
+                                        
+                                       
                                         echo "<tr><td>".$row['order_id']."</td>";
                                         echo "<td>".$concert_row['concert_title']."</td>";
                                         echo "<td>".$row['order_amount']."</td>";

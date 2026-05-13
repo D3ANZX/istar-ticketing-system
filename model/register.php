@@ -3,6 +3,7 @@
     require('../controller/register_controller.php');
     require('db_connection.php');
 
+    $default_role = "user";
 
     
     $sql = "INSERT INTO users_tbl
@@ -14,7 +15,8 @@
         birthdate,
         contact_no,
         city,
-        address
+        address,
+        role
     )
 
     VALUES
@@ -26,7 +28,8 @@
         '$birthdate',
         '$contact_no',
         '$city',
-        '$address'
+        '$address',
+        '$default_role',
     )";
 
     $result = mysqli_query($conn, $sql);

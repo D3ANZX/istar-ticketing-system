@@ -8,19 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../assets/istar-logo.png">
     <?php 
-    require('../model/db_connection.php');
-    session_start(); 
-
-       $concert_id = $_POST['concert_id'];
-       $order_amount = $_POST['order_amount'];
-       $concert_details_query = "SELECT * FROM concerts_tbl where concert_id = ".$concert_id;
-
-       $concert_details_result = mysqli_query($conn, $concert_details_query);
-
-       $concert_row = mysqli_fetch_assoc($concert_details_result);
-
-   
-       
+        require('../model/db_connection.php');
+        session_start(); 
+        $concert_id = $_POST['concert_id'];
     ?>
 
 
@@ -52,41 +42,42 @@
             <br>
             <br>
             <br>
-            <!-- BOOKING CONTENT WINDOW -->
-            <form action="../controller/order_controller.php" method="post">
-                <input type="hidden" value="<?php echo $concert_id;?>" name="concert_id">
-                <input type="hidden" value="<?php echo $order_amount;?>" name="order_amount">
-                <input type="hidden" value="<?php echo $customer_id;?>" name="customer_id">
-                <input type="hidden" value="<?php echo $customer_name;?>" name="customer_name">
-                <input type="hidden" value="<?php echo $concert_name;?>" name="concert_name">
-                <input type="hidden" value="<?php echo $ticket_cost;?>" name="ticket_cost">
-                <input type="hidden" value="<?php echo $total_price;?>" name="total_price ">
-                
-                <div class="payment-content">
-                    <div class="payment-details">
-                        <h2>Confirm Payment</h2>
-                        <p>Customer ID: <?php echo $_SESSION['user_id'] ?></p>
-                        <p>Customer Name: <?php echo $_SESSION['firstname']. " " . $_SESSION['lastname']?></p>
-                        <p>Concert ID: <?php echo $concert_id ?></p>
-                        <p>Concert Name: <?php echo $concert_row['concert_title'] ?></p>
-                        <p>Artist: <?php echo $concert_row['concert_artist']?> </p>
-                        <p>Ticket Price: <?php echo $concert_row['ticket_cost']?> </p>
-                        <p>Order Amount: <?php echo $order_amount ?> </p>
-                        <p>Total Price: <?php echo "₱ ". $order_amount * $concert_row['ticket_cost'].".00";?></p>
-                        
+            
+                <div class="concert-window">
+                    <?php 
+                        $concert_query = "SELECT * FROM concerts_tbl where concert_id =".$concert_id;
+                        $concert_result = mysqli_query($conn, $concert_query);
+                        $concert_row = mysqli_fetch_assoc($concert_result);
+                    ?>
+                    <div class="concert_info">
+                        <form action="./payment_page.php" method="post">
+                            <input type="hidden"  name="concert_id" value="<?php echo $concert_id; ?>">
+                            <h1>Concert Details</h1>
+                            <p> Concert Id: <?php echo $concert_row['concert_id'] ?></p>
+                            <p> Concert Title: <?php echo $concert_row['concert_title'] ?></p>
+                            <p> Artist: <?php echo $concert_row['concert_artist'] ?></p>
+                            <p> Ticket Cost: <?php echo $concert_row['ticket_cost'] ?></p>
+                            <p> Concert Date: <?php echo $concert_row['concert_date'] ?></p>
+                            <select name="order_amount" id="">
+                                <option value="1"> 1</option>
+                                <option value="2"> 2</option>
+                                <option value="3"> 3</option>
+                                <option value="4"> 4</option>
+                                <option value="5"> 5</option>
+                            </select>
+                            <br>
+                            <br>
+                            <button type="submit" class="book-submit"> BOOK CONCERT </button>
+                     </form>
                     </div>
+                    <img src="<?php echo $concert_row['png_src'] ?>" alt="concert-imgs" class="concert-img">
                     
-                    <div class="qr-container">
-                        <div class="qr-code">
-                            <img src="../assets/qr-code.png" alt="">
-                        </div>
-                         <br>
-                        <button type="submit" class="submit-button">CONFIRM ORDER</button>
-                    </div>
-                    </div>
-                </div>
+               
+
+                
             </div>
-        </form>
+        </div>
+                 
     </div>
 </body>
 <footer>
